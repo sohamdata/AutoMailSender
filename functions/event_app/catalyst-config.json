@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "event_app",
+		"stack": "node16",
+		"type": "event"
+	},
+	"execution": {
+		"main": "index.js"
+	}
+}

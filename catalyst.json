@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "targets": [
+      "event_app"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "client"
+  }
+}

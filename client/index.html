@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>signup - label</title>
+    <script src="https://www.zoho.com/crm/js/js-lib-file.js"></script>
+    <script src="https://static.zohocdn.com/catalyst/sdk/js/2.0.0/catalystWebSDK.js"></script>
+    <script src="/__catalyst/sdk/init.js"></script>
+    <style>
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-y: scroll;
+        }
+
+        body {
+            background: #e4fbff;
+            font-family: 'Titillium Web', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1ab188;
+            transition: .5s ease;
+        }
+
+        a:hover {
+            color: #179b77;
+        }
+
+        .form {
+            background: rgba(19, 35, 47, 0.9);
+            padding: 40px;
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+        }
+
+        .tab-group {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .tab-group:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .tab-group li a {
+            display: block;
+            text-decoration: none;
+            padding: 12px;
+            background: rgba(160, 179, 176, 0.25);
+            color: #a0b3b0;
+            font-size: 20px;
+            float: left;
+            width: 50%;
+            text-align: center;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+
+        .tab-group li a:hover {
+            background: #301E67;
+            color: #ffffff;
+        }
+
+        .tab-group .active a {
+            background: #5B8FB9;
+            color: #ffffff;
+        }
+
+        .tab-content>div:last-child {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-weight: 600;
+            margin: 0 0 30px;
+        }
+
+        label {
+            position: absolute;
+            -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+            left: 13px;
+            top: 8px;
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.25s ease;
+            -webkit-backface-visibility: hidden;
+            pointer-events: none;
+            font-size: 16px;
+        }
+
+        label .req {
+            margin: 2px;
+            color: #5B8FB9;
+        }
+
+        label.active {
+            -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+            left: 2px;
+            font-size: 14px;
+        }
+
+        label.active .req {
+            opacity: 0;
+        }
+
+        label.highlight {
+            color: #ffffff;
+        }
+
+        input,
+        textarea {
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            /* height: 100%; */
+            padding: 12px 10px;
+            background: none;
+            background-image: none;
+            border: 1px solid #a0b3b0;
+            color: #ffffff;
+            border-radius: 0;
+            box-sizing: border-box;
+            transition: border-color .25s ease, box-shadow .25s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 0;
+            border-color: #B6EADA;
+        }
+
+        textarea {
+            border: 2px solid #a0b3b0;
+            resize: vertical;
+        }
+
+        .field-wrap {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .top-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .top-row>div {
+            float: left;
+            width: 48%;
+            margin-right: 4%;
+        }
+
+        .top-row>div:last-child {
+            margin: 0;
+        }
+
+        .button {
+            border: 0;
+            outline: none;
+            border-radius: 0;
+            padding: 14px 0;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            background: #5B8FB9;
+            color: #ffffff;
+            transition: all 0.5s ease;
+            -webkit-appearance: none;
+        }
+
+        .button:hover,
+        .button:focus {
+            background: #301E67;
+            cursor: pointer;
+        }
+
+        .button-block {
+            display: block;
+            width: 100%;
+        }
+
+        .forgot {
+            margin-top: -20px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <ul class="tab-group">
+            <li class="tab active"><a href="#signup">Sign Up</a></li>
+            <li class="tab"><a href="#login">Log In</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="signup">
+                <h1>Sign up to access the Course</h1>
+                <form>
+                    <div class="top-row">
+                        <div class="field-wrap">
+                            <label> First Name<span class="req">*</span> </label>
+                            <input id="firstname" type="text" required autocomplete="off" />
+                        </div>
+                        <div class="field-wrap">
+                            <label> Last Name<span class="req">*</span> </label>
+                            <input id="lastname" type="text" required autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="field-wrap">
+                        <label> Email Address<span class="req">*</span> </label>
+                        <input id="email" type="email" required autocomplete="off" />
+                    </div>
+                    <button onclick="signupAction(this)" class="button button-block" />
+                    Get Started
+                    </button>
+                </form>
+            </div>
+            <div id="login">
+
+            </div>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.form').find('input, textarea').on('focus', function (e) {
+                var $this = $(this),
+                    label = $this.prev('label');
+                label.addClass('active highlight');
+            });
+
+            $('.form').find('input, textarea').on('blur', function (e) {
+                var $this = $(this),
+                    label = $this.prev('label');
+                if ($this.val() == '') {
+                    label.removeClass('active highlight');
+                } else {
+                    label.removeClass('highlight');
+                }
+            });
+
+            $('.tab a').on('click', function (e) {
+                e.preventDefault();
+                $(this).parent().addClass('active');
+                $(this).parent().siblings().removeClass('active');
+                target = $(this).attr('href');
+                $('.tab-content > div').not(target).hide();
+                $(target).fadeIn(600);
+            });
+        });
+    </script>
+</body>
+
+</html>
